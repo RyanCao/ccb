@@ -1,0 +1,12 @@
+aws.rcant.com
+{ 
+  log {
+    output file /var/log/caddy/caddy.log
+  }
+  tls caoqsh@gmail.com
+  @websockets {
+    header Connection Upgrade
+    header Upgrade websocket
+  }
+  reverse_proxy @websockets v2ray://v2ray:17995
+}
